@@ -1,15 +1,5 @@
-"""
-The code is based on the paper:
-
-Pastor, P., Hoffmann, H., Asfour, T., & Schaal, S. (2009).
-Learning and generalization of motor skills by learning from demonstration.
-In 2009 IEEE International Conference on Robotics and Automation. IEEE.
-https://doi.org/10.1109/robot.2009.5152385
-"""
-
 import numpy as np
 from dmpling.cs import CanonicalSystem
-
 from dmpling import utils
 
 

@@ -1,29 +1,18 @@
 from setuptools import setup
 # from distutils.core import setup
 
-setup(name='novel',
-      packages=['novel'],
+setup(name='dmpling',
+      packages=['dmpling'],
       version='0.0.1',
-      description='Novelty detection in Python',
+      description='Dynamic Movement Primitives in Python',
       author='Theodore Tsitsimis',
       author_email='th.tsitsimis@gmail.com',
-      url='https://github.com/tsitsimis/lemonpy',
-      download_url='https://github.com/tsitsimis/novel/archive/0.0.1.tar.gz',
-      keywords=['novelty', 'svm', 'machine learning'],
+      url='https://github.com/tsitsimis/dmpling',
+      download_url='https://github.com/tsitsimis/dmpling/archive/0.0.1.tar.gz',
+      keywords=['robotics', 'motion planning', 'imitation learning'],
       license='MIT',
-      classifiers=[
-          'Development Status :: 3 - Alpha',
-
-          'Intended Audience :: Developers',
-          'Topic :: Software Development :: Build Tools',
-
-          'License :: OSI Approved :: MIT License',
-
-          'Programming Language :: Python :: 2.7'
-      ],
       install_requires=[
-          'numpy',
-          'cvxopt'
+          'numpy'
       ],
       zip_safe=False
       )
