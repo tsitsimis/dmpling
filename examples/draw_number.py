@@ -7,10 +7,11 @@ data = np.load('../assets/number2.npy')
 
 path1 = data[:, 0]
 path2 = data[:, 1]
+n = path1.shape[0]
 
 # define dmps
-T = 2.0
 dt = 1e-2
+T = n * dt
 a = 10
 b = a / 4
 n_bfs = 100
@@ -25,17 +26,18 @@ dmp2.fit(path2)
 y1 = np.zeros(dmp1.cs.N)
 y2 = np.zeros(dmp1.cs.N)
 
-s1 = path1[0] + 0.7
-s2 = path2[0] - 0.8
-dmp1.y = s1
-dmp2.y = s2
+# s1 = path1[0] + 0.7
+# s2 = path2[0] - 0.8
+# dmp1.y = s1
+# dmp2.y = s2
+#
+# g1 = path1[-1] + 0.7
+# g2 = path2[-1] - 0.8
 
-g1 = path1[-1] + 0.7
-g2 = path2[-1] - 0.8
-
+k = 1.3
 for i in range(dmp1.cs.N):
-    y1[i], _, _, _ = dmp1.step(k=1.3, start=s1, goal=g1)
-    y2[i], _, _, _ = dmp2.step(k=1.3, start=s2, goal=g2)
+    y1[i], _, _, _ = dmp1.step(k=k)
+    y2[i], _, _, _ = dmp2.step(k=k)
 
 # plot
 plt.plot(path1, path2)

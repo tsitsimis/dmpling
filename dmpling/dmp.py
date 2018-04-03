@@ -57,14 +57,6 @@ class DMP:
         return np.exp(-self.widths * (theta - self.centers) ** 2)
 
     def step(self, tau=1.0, k=1.0, start=None, goal=None):
-        """
-        executes one step of the DMP.
-        :param start: start of movement
-        :param goal: goal of executed trajectory
-        :param tau: temporal scaling
-        :param k: spatial scaling
-        :return: position, velocity, acceleration of movement
-        """
         if goal is None:
             g = self.g
         else:
@@ -87,7 +79,6 @@ class DMP:
 
         self.yd = self.z / tau
         self.y += self.yd * self.dt
-
         return self.y, self.yd, self.z, self.zd
 
     def fit(self, y_demo, tau=1.0):
@@ -114,3 +105,10 @@ class DMP:
         self.w = aa / bb
 
         self.reset()
+
+    def run_sequence(self, tau=1.0, k=1.0, start=None, goal=None):
+        y = np.zeros(self.cs.N)
+        y[0] = self.y0
+        for i in range(self.cs.N):
+            y[i], _, _, _ = self.step(tau=tau, k=k, start=start, goal=goal)
+        return y
