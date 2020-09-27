@@ -54,4 +54,4 @@ Considering only the trajectory of the human's right hand (marker 24), a DMP was
 
 <img src="assets/imitation.gif">
 
-We see that the robot follows the adapted trajectory but not exactly and in other settings may  from kinematic singularities. This is a major issue in movement imitation called correspondence problem which occurs when the demonstrator and the robot differ substantially regarding their configuration and DOFs. However, it is showed that DMPs have the potential to model demonstrated movements recorded only once (no need for iterative learning) and generalize them to different tasks.
+We see that the robot follows the adapted trajectory but not exactly and in other settings may suffer from kinematic singularities. This is a major issue in movement imitation called correspondence problem which occurs when the demonstrator and the robot differ substantially regarding their configuration and DOFs. However, it is showed that DMPs have the potential to model demonstrated movements recorded only once (no need for iterative learning) and generalize them to different tasks.
